@@ -29,7 +29,7 @@ public class RandomWalkers
                 {
                     y += 1;
                 }
-                else if (prob <= 1.00)
+                else
                 {
                     y += -1;
                 }

@@ -11,6 +11,8 @@ public class RandomWalker
         
         while (dist < n)
         {
+            System.out.println("(" + x + ", " + y + ")");
+            
             double prob = Math.random();
 
             if (prob <= 0.25)
@@ -19,17 +21,16 @@ public class RandomWalker
             }
             else if (prob <= 0.5)
             {
-                x += -1;
+                x -= 1;
             }
             else if (prob <= 0.75)
             {
                 y += 1;
             }
-            else if (prob <= 1.00)
+            else
             {
-                y += -1;
+                y -= 1;
             }
-            System.out.println("(" + x + ", " + y + ")");
 
             dist = Math.abs(x) + (long) Math.abs(y);
 
