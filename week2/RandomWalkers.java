@@ -1,46 +1,35 @@
-public class RandomWalkers
-{
-    public static void main(String[] args)
-    {
+public class RandomWalkers {
+    public static void main(String[] args) {
         int r = Integer.parseInt(args[0]);
         int trials = Integer.parseInt(args[1]);
-        
-        int x = 0;
-        int y = 0;
-        int counter = 0; 
-        long dist = 0;
-        long total = 0;
-        
-        for (int i = 0; i <= trials; i++)
-        {
-            while (dist < r)
-            {
-                double prob = Math.random();
+        double totalSteps = 0;
 
-                if (prob <= 0.25)
-                {
-                    x += 1;
-                }
-                else if (prob <= 0.5)
-                {
-                    x += -1;
-                }
-                else if (prob <= 0.75)
-                {
-                    y += 1;
-                }
-                else
-                {
-                    y += -1;
-                }
+        for (int i = 0; i < trials; i++) {
+            int x = 0;
+            int y = 0;
+            int steps = 0;
 
-                dist = Math.abs(x) + (long) Math.abs(y);
-
-                counter++;
+            while (Math.abs(x) + Math.abs(y) < r) {
+                double random = Math.random();
+                if (random < 0.25) {
+                    y++;
+                }
+                else if (random < 0.5) {
+                    x++;
+                }
+                else if (random < 0.75) {
+                    y--;
+                }
+                else {
+                    x--;
+                }
+                steps++;
             }
-            total = total + counter;
+
+            totalSteps += steps;
         }
-        double average = total / (double) trials;
-        System.out.println("average number of steps = " + average);
+
+        double averageSteps = totalSteps / trials;
+        System.out.println("average number of steps = " + averageSteps);
     }
 }
