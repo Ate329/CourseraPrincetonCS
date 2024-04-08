@@ -1,15 +1,6 @@
 public class ShannonEntropy {
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.err.println("Usage: java ShannonEntropy <m>");
-            return;
-        }
-
         int m = Integer.parseInt(args[0]);
-        if (m <= 0) {
-            System.err.println("m must be a positive integer");
-            return;
-        }
 
         int[] frequencies = new int[m + 1];
         int totalCount = 0;
