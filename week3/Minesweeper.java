@@ -4,11 +4,6 @@ public class Minesweeper {
         int n = Integer.parseInt(args[1]);
         int k = Integer.parseInt(args[2]);
 
-        if (k >= m * n) {
-            System.out.println("Error: Number of mines must be less than the total number of cells.");
-            return;
-        }
-
         char[][] grid = new char[m][n];
         int minesPlaced = 0;
 
