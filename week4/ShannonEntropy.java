@@ -7,10 +7,6 @@ public class ShannonEntropy {
 
         while (!StdIn.isEmpty()) {
             int num = StdIn.readInt();
-            if (num < 1 || num > m) {
-                System.err.println("Integer must be between 1 and " + m);
-                return;
-            }
             frequencies[num]++;
             totalCount++;
         }
