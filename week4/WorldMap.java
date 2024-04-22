@@ -8,7 +8,6 @@ public class WorldMap {
         StdDraw.setYscale(0, height);
 
         while (!StdIn.isEmpty()) {
-            String regionName = StdIn.readString();
             int vertices = StdIn.readInt();
             double[] xCoords = new double[vertices];
             double[] yCoords = new double[vertices];
